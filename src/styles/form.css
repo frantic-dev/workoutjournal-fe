@@ -1,0 +1,6 @@
+.checked {
+  color: rgb(255, 157, 29);
+}
+.fa-star {
+  cursor: pointer;
+}
