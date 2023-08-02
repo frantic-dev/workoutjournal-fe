@@ -12,8 +12,27 @@ function Form(props) {
 				value={props.workout.url}
 				onChange={props.changeWorkout}
 			/>
-		
-			<StarRating rated="intensity" />
+			<br />
+			<label htmlFor="intensity">intensity</label>
+			<StarRating
+				rated="intensity"
+				name="intensity"
+			/>
+			<label htmlFor="variety">variety</label>
+			<StarRating
+				rated="variety"
+				name="variety"
+			/>
+			<label htmlFor="fatigue">fatigue</label>
+			<StarRating
+				rated="fatigue"
+				name="fatigue"
+			/>
+			<label htmlFor="enjoyment">enjoyment</label>
+			<StarRating
+				rated="enjoyment"
+				name="enjoyment"
+			/>
 		</form>
 	)
 }
