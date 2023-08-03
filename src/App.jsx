@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import youtubeThumbnail from 'youtube-thumbnail'
 import Form from './components/Form'
+import workoutService from './services/workouts'
 
 function App() {
 	const [workouts, setWorkouts] = useState([])
@@ -13,10 +14,13 @@ function App() {
 	useEffect(() => {
 		if (workout.url !== '') {
 			const thumbnail = youtubeThumbnail(workout.url).high.url
-			setWorkout((workout) => ({
-				...workout,
-				thumbnail: thumbnail,
-			}))
+			workoutService.getTitle(workout.url).then((title) => {
+				setWorkout((workout) => ({
+					...workout,
+					thumbnail: thumbnail,
+					title: title,
+				}))
+			})
 		}
 	}, [workout.url])
 
@@ -26,7 +30,7 @@ function App() {
 			`#${rated} .fa-star-half-o`
 		).length
 		const rating = checked - halfChecked / 2
-		setWorkout({...workout, [rated]: rating})
+		setWorkout({ ...workout, [rated]: rating })
 	}
 	return (
 		<div>

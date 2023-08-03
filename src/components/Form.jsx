@@ -26,6 +26,7 @@ function Form(props) {
 			/>
 			<br />
 			<img src={props.workout.thumbnail} />
+			<h3>{props.workout.title}</h3>
 			<br />
 			{questions}
 		</form>

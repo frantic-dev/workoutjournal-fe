@@ -32,8 +32,8 @@ function StarRating(props) {
 			id={props.rated}
 			onClick={handleRating}
 		>
-			{Array.from({ length: 5 }).map((star) => (
-				<Star />
+			{Array.from({ length: 5 }).map((star, index) => (
+				<Star key={index} />
 			))}
 			<br />
 		</div>
