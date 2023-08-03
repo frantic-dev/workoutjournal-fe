@@ -1,6 +1,9 @@
 .checked {
   color: rgb(255, 157, 29);
 }
-.fa-star {
+.fa {
   cursor: pointer;
+}
+form div {
+  width: max-content;
 }
