@@ -8,7 +8,6 @@ function App() {
 	const [workouts, setWorkouts] = useState([])
 	const [workout, setWorkout] = useState({
 		url: '',
-		thumbnail: '',
 	})
 
 	useEffect(() => {
@@ -39,10 +38,14 @@ function App() {
 
 	function handleSubmit(e) {
 		e.preventDefault()
-		console.log(e.target)
 		workoutService.update(workout)
 		workoutService.getAll().then((workouts) => setWorkouts(workouts))
-
+		const stars = document.querySelectorAll('.checked')
+		stars.forEach((star) => {
+			star.classList.remove('fa-star', 'fa-star-half-o', 'checked')
+			star.classList.add('fa-star-o')
+		})
+		setWorkout({ url: '' })
 	}
 
 	return (
