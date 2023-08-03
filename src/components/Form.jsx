@@ -13,6 +13,8 @@ function Form(props) {
 				onChange={props.changeWorkout}
 			/>
 			<br />
+			<img src={props.workout.thumbnail} />
+			<br />
 			<label htmlFor="intensity">intensity</label>
 			<StarRating
 				rated="intensity"
