@@ -25,17 +25,16 @@ function StarRating(props) {
 			const starClassList = stars[i].classList
 			getStar(starClassList, 'fa-star-o')
 		}
+		props.changeRating(e, props.rated)
 	}
 	return (
 		<div
 			id={props.rated}
 			onClick={handleRating}
 		>
-			<Star />
-			<Star />
-			<Star />
-			<Star />
-			<Star />
+			{Array.from({ length: 5 }).map((star) => (
+				<Star />
+			))}
 			<br />
 		</div>
 	)

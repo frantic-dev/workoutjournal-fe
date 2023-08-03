@@ -2,6 +2,18 @@ import StarRating from './Star-rating'
 import '../styles/form.css'
 
 function Form(props) {
+	const questions = ['intensity', 'variety', 'fatigue', 'enjoyment'].map(
+		(question) => (
+			<label htmlFor={question} key={question}>
+				{question}
+				<StarRating
+					rated={question}
+					name={question}
+					changeRating={props.changeRating}
+				/>
+			</label>
+		)
+	)
 	return (
 		<form>
 			<label htmlFor="url">Youtube video url</label>
@@ -10,31 +22,12 @@ function Form(props) {
 				id="url"
 				name="url"
 				value={props.workout.url}
-				onChange={props.changeWorkout}
+				onChange={props.changeUrl}
 			/>
 			<br />
 			<img src={props.workout.thumbnail} />
 			<br />
-			<label htmlFor="intensity">intensity</label>
-			<StarRating
-				rated="intensity"
-				name="intensity"
-			/>
-			<label htmlFor="variety">variety</label>
-			<StarRating
-				rated="variety"
-				name="variety"
-			/>
-			<label htmlFor="fatigue">fatigue</label>
-			<StarRating
-				rated="fatigue"
-				name="fatigue"
-			/>
-			<label htmlFor="enjoyment">enjoyment</label>
-			<StarRating
-				rated="enjoyment"
-				name="enjoyment"
-			/>
+			{questions}
 		</form>
 	)
 }
