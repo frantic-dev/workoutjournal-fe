@@ -12,4 +12,12 @@ const getTitle = (videoId) => {
 		.then((response) => response.data)
 }
 
-export default { getTitle }
+const getAll = () => {
+	return axios.get(url).then((response) => response.data)
+}
+
+const update = (newWorkout) => {
+	return axios.post(url, newWorkout).then((response) => response.data)
+}
+
+export default { getTitle, getAll, update }

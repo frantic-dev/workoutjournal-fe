@@ -12,6 +12,10 @@ function App() {
 	})
 
 	useEffect(() => {
+		workoutService.getAll().then((workouts) => setWorkouts(workouts))
+	}, [])
+
+	useEffect(() => {
 		if (workout.url !== '') {
 			const thumbnail = youtubeThumbnail(workout.url).high.url
 			workoutService.getTitle(workout.url).then((title) => {
@@ -32,6 +36,15 @@ function App() {
 		const rating = checked - halfChecked / 2
 		setWorkout({ ...workout, [rated]: rating })
 	}
+
+	function handleSubmit(e) {
+		e.preventDefault()
+		console.log(e.target)
+		workoutService.update(workout)
+		workoutService.getAll().then((workouts) => setWorkouts(workouts))
+
+	}
+
 	return (
 		<div>
 			<Form
@@ -40,6 +53,7 @@ function App() {
 					setWorkout((workout) => ({ ...workout, url: e.target.value }))
 				}
 				changeRating={changeRating}
+				handleSubmit={handleSubmit}
 			/>
 		</div>
 	)

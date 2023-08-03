@@ -15,7 +15,7 @@ function Form(props) {
 		)
 	)
 	return (
-		<form>
+		<form onSubmit={props.handleSubmit}>
 			<label htmlFor="url">Youtube video url</label>
 			<input
 				type="text"
@@ -29,6 +29,7 @@ function Form(props) {
 			<h3>{props.workout.title}</h3>
 			<br />
 			{questions}
+			<button type="submit">Submit</button>
 		</form>
 	)
 }
