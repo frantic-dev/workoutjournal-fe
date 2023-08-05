@@ -1,6 +1,9 @@
 export default function Card(props) {
 	return (
-		<div key={props.workout.id}>
+		<div
+			key={props.workout.id}
+			className="card"
+		>
 			<img src={props.workout.thumbnail} />
 			<div className="workout-title">
 				<b>{props.workout.title}</b>

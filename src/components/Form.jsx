@@ -25,7 +25,7 @@ function Form(props) {
 				onChange={props.changeUrl}
 			/>
 			<br />
-			<img src={props.workout.thumbnail} />
+			{props.workout.thumbnail && <img src={props.workout.thumbnail} />}
 			<h3>{props.workout.title}</h3>
 			<br />
 			{questions}

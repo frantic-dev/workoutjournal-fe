@@ -4,6 +4,7 @@ import youtubeThumbnail from 'youtube-thumbnail'
 import Cards from './components/Cards'
 import Form from './components/Form'
 import workoutService from './services/workouts'
+import './styles/app.css'
 
 function App() {
 	const [workouts, setWorkouts] = useState([])
@@ -50,7 +51,7 @@ function App() {
 	}
 
 	return (
-		<div>
+		<div id='body'>
 			<Form
 				workout={workout}
 				changeUrl={(e) =>

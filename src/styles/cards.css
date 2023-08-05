@@ -1,7 +1,20 @@
 i {
-  color: orange;
+	color: orange;
 }
 img {
-  aspect-ratio: 16/9;
-  object-fit: cover;
+	aspect-ratio: 16/9;
+	object-fit: cover;
+	display: block;
+	margin: auto;
+	padding: 10px;
+}
+#cards-container {
+	/* background-color: pink; */
+	display: grid;
+	gap: 10px;
+	grid-template-rows: min-content;
+}
+.card {
+	/* background-color: green; */
+	padding: 10px;
 }

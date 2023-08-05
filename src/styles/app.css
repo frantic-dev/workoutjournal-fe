@@ -1,0 +1,17 @@
+#body {
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+@media (width < 600px) {
+  #body {
+    flex-wrap: wrap;
+  }
+  #cards-container{
+    margin: auto;
+  }
+  form {
+    height: auto;
+    margin: auto;
+    border: none;
+  }
+}
