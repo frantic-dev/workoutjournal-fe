@@ -3,7 +3,7 @@ const url = '/api/workouts'
 
 function getYtId(url) {
 	let idIndex = url.indexOf('v=')
-	return url.slice(idIndex + 2)
+	return url.slice(idIndex + 2, idIndex + 13)
 }
 
 const getTitle = (videoId) => {
