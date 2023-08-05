@@ -9,16 +9,28 @@ export default function Card(props) {
 				<b>{props.workout.title}</b>
 			</div>
 			<div className="workout-intensity">
-				intensity: {props.workout.intensity} <i className="fa fa-star"></i>
+				intensity:
+				<span>
+					{props.workout.intensity} <i className="fa fa-star"></i>
+				</span>
 			</div>
 			<div className="workout-variety">
-				variety: {props.workout.variety} <i className="fa fa-star"></i>
+				variety:
+				<span>
+					{props.workout.variety} <i className="fa fa-star"></i>
+				</span>
 			</div>
 			<div className="workout-fatigue">
-				fatigue: {props.workout.fatigue} <i className="fa fa-star"></i>
+				fatigue:
+				<span>
+					{props.workout.fatigue} <i className="fa fa-star"></i>
+				</span>
 			</div>
 			<div className="workout-enjoyment">
-				enjoyment: {props.workout.enjoyment} <i className="fa fa-star"></i>
+				enjoyment:
+				<span>
+					{props.workout.enjoyment} <i className="fa fa-star"></i>
+				</span>
 			</div>
 		</div>
 	)

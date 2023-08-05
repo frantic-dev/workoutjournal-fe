@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+body {
+  background-color: rgba(255, 243, 173, 0.842);
+}
 #body {
   display: flex;
-  /* flex-wrap: wrap; */
+  font-family: 'Inter', sans-serif;
 }
 @media (width < 600px) {
   #body {

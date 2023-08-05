@@ -10,8 +10,7 @@ export default function Cards(props) {
 
 	window.addEventListener('resize', changeWidth)
 
-	let number = Math.floor(width / 300)
-
+	let number = Math.floor(width / 280) - 1
 	const cards = props.workouts.map((workout) => (
 		<Card
 			key={workout.id}

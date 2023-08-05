@@ -11,10 +11,22 @@ img {
 #cards-container {
 	/* background-color: pink; */
 	display: grid;
-	gap: 10px;
+	gap: 15px;
 	grid-template-rows: min-content;
 }
 .card {
 	/* background-color: green; */
-	padding: 10px;
+	padding: 20px;
+	box-shadow: 0 0 15px rgba(128, 128, 128, 0.479) ;
+	border-radius: 10%;
+	height: fit-content;
+	aspect-ratio: 1;
+	max-width: 260px;
+	background-color: rgba(227, 244, 255, 0.473);
+}
+.card div {
+	display: flex;
+	justify-content: space-between;
+	width: 80%;
+	margin: auto;
 }

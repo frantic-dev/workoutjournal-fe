@@ -16,7 +16,7 @@ function Form(props) {
 	)
 	return (
 		<form onSubmit={props.handleSubmit}>
-			<label htmlFor="url">Youtube video url</label>
+			<label htmlFor="url">Youtube video url: </label>
 			<input
 				type="text"
 				id="url"
@@ -25,8 +25,9 @@ function Form(props) {
 				onChange={props.changeUrl}
 			/>
 			<br />
+			<hr />
 			{props.workout.thumbnail && <img src={props.workout.thumbnail} />}
-			<h3>{props.workout.title}</h3>
+			{props.workout.title && <h3>{props.workout.title}</h3>}
 			<br />
 			{questions}
 			<button type="submit">Submit</button>
