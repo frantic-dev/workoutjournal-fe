@@ -40,7 +40,7 @@ function App() {
 
 	function handleSubmit(e) {
 		e.preventDefault()
-		workoutService.update(workout)
+		workoutService.create(workout)
 		workoutService.getAll().then((workouts) => setWorkouts(workouts))
 		const stars = document.querySelectorAll('.checked')
 		stars.forEach((star) => {
@@ -50,8 +50,14 @@ function App() {
 		setWorkout({ url: '' })
 	}
 
+	function handleDelete(id) {
+		workoutService.remove(id)
+		const updatedWorkouts = workouts.filter(workout => workout.id !== id)
+		setWorkouts(updatedWorkouts)
+	}
+
 	return (
-		<div id='body'>
+		<div id="body">
 			<Form
 				workout={workout}
 				changeUrl={(e) =>
@@ -60,7 +66,10 @@ function App() {
 				changeRating={changeRating}
 				handleSubmit={handleSubmit}
 			/>
-			<Cards workouts={workouts}/>
+			<Cards
+				workouts={workouts}
+				handleDelete={handleDelete}
+			/>
 		</div>
 	)
 }

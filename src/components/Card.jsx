@@ -4,6 +4,11 @@ export default function Card(props) {
 			key={props.workout.id}
 			className="card"
 		>
+			<i
+				className="fa fa-trash"
+				aria-hidden="true"
+				onClick={() => props.handleDelete(props.workout.id)}
+			></i>
 			<img src={props.workout.thumbnail} />
 			<div className="workout-title">
 				<b>{props.workout.title}</b>

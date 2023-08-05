@@ -16,8 +16,12 @@ const getAll = () => {
 	return axios.get(url).then((response) => response.data)
 }
 
-const update = (newWorkout) => {
+const create = (newWorkout) => {
 	return axios.post(url, newWorkout).then((response) => response.data)
 }
 
-export default { getTitle, getAll, update }
+const remove = (id) => {
+	return axios.delete(url + '/' + id)
+}
+
+export default { getTitle, getAll, create, remove }

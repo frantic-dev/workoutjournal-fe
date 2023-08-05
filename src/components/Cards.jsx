@@ -15,6 +15,7 @@ export default function Cards(props) {
 		<Card
 			key={workout.id}
 			workout={workout}
+			handleDelete={props.handleDelete}
 		/>
 	))
 

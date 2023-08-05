@@ -1,4 +1,4 @@
-i {
+.card .fa-star {
 	color: orange;
 }
 img {
@@ -9,24 +9,32 @@ img {
 	padding: 10px;
 }
 #cards-container {
-	/* background-color: pink; */
 	display: grid;
 	gap: 15px;
 	grid-template-rows: min-content;
 }
 .card {
-	/* background-color: green; */
 	padding: 20px;
 	box-shadow: 0 0 15px rgba(128, 128, 128, 0.479) ;
 	border-radius: 10%;
 	height: fit-content;
 	aspect-ratio: 1;
 	max-width: 260px;
-	background-color: rgba(227, 244, 255, 0.473);
+	margin-top: 30px;
+	background-color: rgba(255, 207, 136, 0.836);
+	position: relative;
 }
 .card div {
 	display: flex;
 	justify-content: space-between;
 	width: 80%;
 	margin: auto;
+}
+.fa-trash {
+	position: absolute;
+	top: -34px;
+	right: 30px;
+	background-color: rgba(255, 155, 189, 0.548);
+	padding: 8px;
+	color: rgb(255, 68, 68);
 }
