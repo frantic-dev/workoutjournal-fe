@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
 import youtubeThumbnail from 'youtube-thumbnail'
+import Cards from './components/Cards'
 import Form from './components/Form'
 import workoutService from './services/workouts'
 
@@ -58,6 +59,7 @@ function App() {
 				changeRating={changeRating}
 				handleSubmit={handleSubmit}
 			/>
+			<Cards workouts={workouts}/>
 		</div>
 	)
 }
