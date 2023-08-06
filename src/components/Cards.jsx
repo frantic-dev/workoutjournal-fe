@@ -11,11 +11,19 @@ export default function Cards(props) {
 	window.addEventListener('resize', changeWidth)
 
 	let number = Math.floor(width / 280) - 1
-	const cards = props.workouts.map((workout) => (
+
+	function displayDeleteBtn(id, display) {
+		const deleteBtns = document.querySelectorAll('.fa-trash')
+		console.log(deleteBtns[id])
+		deleteBtns[id].style.display = display
+	}
+	const cards = props.workouts.map((workout, id) => (
 		<Card
 			key={workout.id}
 			workout={workout}
 			handleDelete={props.handleDelete}
+			showDeleteBtn={() => displayDeleteBtn(id, 'inline-block')}
+			hideDeleteBtn={() => displayDeleteBtn(id, 'none')}
 		/>
 	))
 

@@ -3,6 +3,8 @@ export default function Card(props) {
 		<div
 			key={props.workout.id}
 			className="card"
+			onMouseOver={props.showDeleteBtn}
+			onMouseOut={props.hideDeleteBtn}
 		>
 			<i
 				className="fa fa-trash"
