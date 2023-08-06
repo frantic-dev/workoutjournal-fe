@@ -15,7 +15,7 @@ function Form(props) {
 		)
 	)
 	return (
-		<form onSubmit={props.handleSubmit}>
+		<form onSubmit={props.handleSubmit} autoComplete='off'>
 			<label htmlFor="url">Youtube video url: </label>
 			<input
 				type="text"

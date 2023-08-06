@@ -12,6 +12,7 @@ export default function Navbar(props) {
 					placeholder="Enter title to search."
 					value={props.value}
 					onChange={props.handleSearchChange}
+					autoComplete='off'
 				/>
 				<i
 					class="fa fa-search"
