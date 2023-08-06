@@ -3,6 +3,11 @@ import '../styles/cards.css'
 import { useState } from 'react'
 export default function Cards(props) {
 	const [width, setWidth] = useState(window.innerWidth)
+	const workoutsToDisplay = props.showAll
+		? props.workouts
+		: props.workouts.filter((workout) => {
+				return workout.title.toLowerCase().match(props.searchValue)
+		  })
 
 	function changeWidth() {
 		setWidth(window.innerWidth)
@@ -14,10 +19,9 @@ export default function Cards(props) {
 
 	function displayDeleteBtn(id, display) {
 		const deleteBtns = document.querySelectorAll('.fa-trash')
-		console.log(deleteBtns[id])
 		deleteBtns[id].style.display = display
 	}
-	const cards = props.workouts.map((workout, id) => (
+	const cards = workoutsToDisplay.map((workout, id) => (
 		<Card
 			key={workout.id}
 			workout={workout}

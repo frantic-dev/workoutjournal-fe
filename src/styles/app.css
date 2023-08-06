@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 @font-face {
 	font-family: TypoGraphica;
 	src: url(typographica.ttf);
@@ -28,6 +28,9 @@ body {
 nav {
 	background-color: rgba(255, 119, 28, 0.822);
 	padding: 10px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 #logo {
 	font-family: 'typographica', serif;
@@ -42,4 +45,29 @@ nav img {
 	width: 30px;
 	object-fit: contain;
 	display: inline-block;
+}
+nav input {
+	width: 300px;
+	background-color: transparent;
+	border: none;
+	font-family: 'open sans', sans-serif;
+	color: white;
+	/* border: 1px solid grey; */
+}
+nav input:focus {
+	outline: none;
+}
+nav input::placeholder {
+	color: white;
+}
+#search-bar {
+	border: 2px solid white;
+	padding: 5px;
+	border-radius: 20px;
+	height: fit-content;
+	background-color: rgb(255 165 0);
+}
+.fa-search {
+	color: white;
+	margin-right: 5px;
 }

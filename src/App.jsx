@@ -12,6 +12,8 @@ function App() {
 	const [workout, setWorkout] = useState({
 		url: '',
 	})
+	const [showAllWorkouts, setShowAllWorkouts] = useState(true)
+	const [searchValue, setSearchValue] = useState('')
 
 	useEffect(() => {
 		workoutService.getAll().then((workouts) => setWorkouts(workouts))
@@ -57,9 +59,18 @@ function App() {
 		setWorkouts(updatedWorkouts)
 	}
 
+	function handleSearchChange(e) {
+		setSearchValue(e.target.value)
+		setShowAllWorkouts(false)
+		if (e.target.value === '') setShowAllWorkouts(true)
+	}
+
 	return (
 		<>
-			<Navbar />
+			<Navbar
+				value={searchValue}
+				handleSearchChange={handleSearchChange}
+			/>
 			<div id="body">
 				<Form
 					workout={workout}
@@ -72,6 +83,8 @@ function App() {
 				<Cards
 					workouts={workouts}
 					handleDelete={handleDelete}
+					showAll={showAllWorkouts}
+					searchValue={searchValue}
 				/>
 			</div>
 		</>
