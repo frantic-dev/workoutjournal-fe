@@ -1,21 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap');
+@font-face {
+	font-family: TypoGraphica;
+	src: url(typographica.ttf);
+}
 body {
-  background-color: rgba(255, 246, 195, 0.842);
+	background-color: rgba(255, 246, 195, 0.842);
+	margin: 0%;
 }
 #body {
-  display: flex;
-  font-family: 'Inter', sans-serif;
+	display: flex;
+	font-family: 'Inter', sans-serif;
 }
 @media (width < 600px) {
-  #body {
-    flex-wrap: wrap;
-  }
-  #cards-container{
-    margin: auto;
-  }
-  form {
-    height: auto;
-    margin: auto;
-    border: none;
-  }
+	#body {
+		flex-wrap: wrap;
+	}
+	#cards-container {
+		margin: auto;
+	}
+	form {
+		height: auto;
+		margin: auto;
+		border: none;
+	}
+}
+nav {
+	background-color: rgba(255, 119, 28, 0.822);
+	padding: 10px 20px;
+}
+#logo {
+	font-family: 'typographica', serif;
+	font-size: 30px;
+	color: rgb(255 214 148);
+	display: flex;
+	align-items: center;
+	width: fit-content;
+}
+nav img {
+	height: 25px;
+	width: 30px;
+	object-fit: contain;
+	display: inline-block;
 }

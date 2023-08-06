@@ -5,6 +5,7 @@ import Cards from './components/Cards'
 import Form from './components/Form'
 import workoutService from './services/workouts'
 import './styles/app.css'
+import Navbar from './components/Navbar'
 
 function App() {
 	const [workouts, setWorkouts] = useState([])
@@ -52,25 +53,28 @@ function App() {
 
 	function handleDelete(id) {
 		workoutService.remove(id)
-		const updatedWorkouts = workouts.filter(workout => workout.id !== id)
+		const updatedWorkouts = workouts.filter((workout) => workout.id !== id)
 		setWorkouts(updatedWorkouts)
 	}
 
 	return (
-		<div id="body">
-			<Form
-				workout={workout}
-				changeUrl={(e) =>
-					setWorkout((workout) => ({ ...workout, url: e.target.value }))
-				}
-				changeRating={changeRating}
-				handleSubmit={handleSubmit}
-			/>
-			<Cards
-				workouts={workouts}
-				handleDelete={handleDelete}
-			/>
-		</div>
+		<>
+			<Navbar />
+			<div id="body">
+				<Form
+					workout={workout}
+					changeUrl={(e) =>
+						setWorkout((workout) => ({ ...workout, url: e.target.value }))
+					}
+					changeRating={changeRating}
+					handleSubmit={handleSubmit}
+				/>
+				<Cards
+					workouts={workouts}
+					handleDelete={handleDelete}
+				/>
+			</div>
+		</>
 	)
 }
 
