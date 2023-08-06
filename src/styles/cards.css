@@ -43,3 +43,10 @@ img {
 .fa-trash:hover {
 	filter: brightness(110%);
 }
+.card a {
+	text-decoration: none;
+	color: rgb(43, 43, 43);
+}
+.workout-title {
+	padding-bottom: 10px;
+}
